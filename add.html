@@ -184,12 +184,12 @@ tg.MainButton.text = "Оформить"; //изменяем текст кноп�
 tg.MainButton.textColor = "#FFFFFF"; //изменяем цвет текста кнопки
 tg.MainButton.color = "#29CE00"; //изменяем цвет бэкграунда кнопки
 
-//var plus = document.querySelectorAll("plus"); //получаем кнопку скрыть/показать 
+var btn = document.querySelectorAll("button"); //Выбираем все кнопки на странице и получаем массив
 
-document.body.addEventListener('click', e => { //вешаем событие на нажатие html-кнопки
-   if (e.target.classList.contains('plus')){ //если кнопка + 
-    tg.MainButton.show() //показываем кнопку 
-   }
+btns.forEach(function(btn) {
+    btn.addEventListener('click', function(e){ //вешаем событие на нажатие html-кнопки
+        tg.MainButton.show() //показываем кнопку 
+    })
 });
 
 let btnED = document.getElementById("btnED"); //получаем кнопку активировать/деактивировать
