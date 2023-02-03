@@ -245,6 +245,7 @@ agent.textContent = 'Агент поддержки: ' + input.value;
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){   //при клике на основную кнопку
     tg.sendData("some string that we need to send")
+    tg.close()
 });
 
 let stuff = document.getElementById("inp2"); //объявляем переменную "Внутренний сотрудник" по ID
