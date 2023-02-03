@@ -59,7 +59,7 @@
                         <h1>Агент поддержки</h1>
                         <div class="buttons">
                             <button class="minus">-</button>
-                            <input class="quantity" type="text" value="0" min="0">
+                            <input class="quantity" type="text" value="0" min="0" id="inp1">
                             <button class="plus" id="btn1">+</button>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                         <h1>Внутренний сотрудник</h1>
                         <div class="buttons">
                             <button class="minus">-</button>
-                            <input class="quantity" type="text" value="0" min="0">
+                            <input class="quantity" type="text" value="0" min="0" id="inp2">
                             <button class="plus" id="btn2">+</button>
                         </div>
                     </div>
@@ -240,10 +240,17 @@ btn7.addEventListener('click', function(){ //вешаем событие на н
    }
 });
 
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
-   tg.sendData("some string that we need to send"); 
-   //при клике на основную кнопку отправляем данные в строковом виде
+let agent = document.getElementById("inp1"); //объявляем переменную "Агент" по ID
+agent.textContent = 'Агент поддержки: ' + input.value;
+
+Telegram.WebApp.onEvent('mainButtonClicked', function(){   //при клике на основную кнопку
+    if (agent > 0){   //если значение переменной больше 0
+     tg.sendData({agent}); //отправляем данные
+    } 
 });
+
+let stuff = document.getElementById("inp2"); //объявляем переменную "Внутренний сотрудник" по ID
+stuff.textContent = 'Внутренний сотрудник: ' + input.value;
 
 </script>
 
