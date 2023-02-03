@@ -1,12 +1,12 @@
 from telebot import types
 import telebot
 
-bot = telebot.TeleBot('5958497453:AAE8A5H6LyBst6nSrSIYa82aGlffB5MbLNQ')
+bot = telebot.TeleBot('5958497453:AAGXEifmrsLxiaGxmfNobiJWmf0V3KgGAjg')
 
 def webAppKeyboard(): #создание клавиатуры с webapp кнопкой
    keyboard = types.ReplyKeyboardMarkup(row_width=1) #создаем клавиатуру
    webAppTest = types.WebAppInfo("https://useridentify.github.io/bot_cs/") #создаем webappinfo - формат хранения url
-   one_butt = types.KeyboardButton(text="Приложение", web_app=webAppTest) #создаем кнопку типа webapp
+   one_butt = types.KeyboardButton(text="Открыть приложение", web_app=webAppTest) #создаем кнопку типа webapp
    keyboard.add(one_butt) #добавляем кнопку в клавиатуру
 
    return keyboard #возвращаем клавиатуру
@@ -25,7 +25,7 @@ def new_mes(message):
 def answer(webAppMes):
    print(webAppMes) #вся информация о сообщении
    print(webAppMes.web_app_data.data) #конкретно то что мы передали в бота
-   bot.send_message(webAppMes.chat.id, f"получили инофрмацию из веб-приложения: {webAppMes.web_app_data.data}") 
+   bot.send_message(webAppMes.chat.id, f"Хочу добавить: {webAppMes.web_app_data.data}") 
    #отправляем сообщение в ответ на отправку данных из веб-приложения 
 
 if __name__ == '__main__':
