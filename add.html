@@ -240,11 +240,11 @@ btn7.addEventListener('click', function(){ //вешаем событие на н
    }
 });
 
-// let agent = document.getElementById("inp1"); //объявляем переменную "Агент" по ID
-// agent.textContent = 'Агент поддержки: ' + input.value;
+let agent = document.getElementById("inp1"); //объявляем переменную "Агент" по ID
+agent.textContent = 'Агент поддержки: ' + input.value;
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
-      tg.sendData("some string that we need to send");
+    tg.sendData(agent);
 });
 
 </script>
