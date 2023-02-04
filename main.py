@@ -1,7 +1,7 @@
 from telebot import types
 import telebot
 
-bot = telebot.TeleBot('5958497453:AAGGF0d9Sl7S-SQbKnxFu6MomELQPcSH8wg')
+bot = telebot.TeleBot('5958497453:AAHf9tpI6ltcETe34e9Oy8uXhZvfuY7ysqs')
 
 def webAppKeyboardInline(): #создание inline-клавиатуры с webapp кнопкой
    keyboard = types.InlineKeyboardMarkup(row_width=1) #создаем клавиатуру inline
@@ -14,7 +14,7 @@ def webAppKeyboardInline(): #создание inline-клавиатуры с web
 
 @bot.message_handler(commands=['start']) #обрабатываем команду старт
 def start_fun(message):
-   bot.send_message( message.chat.id, 'Привет!)\nОткрой приложение по кнопке.', parse_mode="Markdown", reply_markup=webAppKeyboardInline()) #отправляем сообщение с нужной клавиатурой
+   bot.send_message( message.chat.id, 'Привет,я бот Юздеска!)\nОткрой приложение по кнопке.', parse_mode="Markdown", reply_markup=webAppKeyboardInline()) #отправляем сообщение с нужной клавиатурой
 
 @bot.message_handler(content_types="text")
 def new_mes(message):
