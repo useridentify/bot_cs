@@ -14,7 +14,7 @@ def webAppKeyboardInline(): #создание inline-клавиатуры с web
 
 @bot.message_handler(commands=['start']) #обрабатываем команду старт
 def start_fun(message):
-   bot.send_message( message.chat.id, 'Привет, я бот Юздеска!)\nОткрой приложение по кнопке.', parse_mode="Markdown", reply_markup=webAppKeyboardInline()) #отправляем сообщение с нужной клавиатурой
+   bot.send_message( message.chat.id, 'Привет!)\nОткрой приложение по кнопке.', parse_mode="Markdown", reply_markup=webAppKeyboardInline()) #отправляем сообщение с нужной клавиатурой
 
 @bot.message_handler(content_types="text")
 def new_mes(message):
