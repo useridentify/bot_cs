@@ -192,10 +192,10 @@ btn1.addEventListener('click', function(){ //вешаем событие на н
    }
 });
 
-const input = document.getElementById("inp1")
+const input1 = document.getElementById("inp1")
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    const value = input.value.trim()
+    const value = input1.value.trim()
     if (value) {
       tg.sendData(`Агент поддержки: ${value}`);
     } else {
@@ -209,6 +209,17 @@ btn2.addEventListener('click', function(){ //вешаем событие на н
    if (tg.MainButton.hide){ //если кнопка скрыта 
     tg.MainButton.show() //показываем кнопку 
    }
+});
+
+const input2 = document.getElementById("inp2")
+
+Telegram.WebApp.onEvent('mainButtonClicked', function(){
+    const value = input2.value.trim()
+    if (value) {
+      tg.sendData(`Агент поддержки: ${value}`);
+    } else {
+    alert("Укажите количество")
+  }  
 });
 
 let btn3 = document.getElementById("btn3"); //объявляем переменную по ID 
