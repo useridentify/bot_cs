@@ -192,6 +192,17 @@ btn1.addEventListener('click', function(){ //вешаем событие на н
    }
 });
 
+const input = document.getElementById("inp1")
+
+Telegram.WebApp.onEvent('mainButtonClicked', function(){
+    const value = input.value.trim()
+    if (value) {
+      tg.sendData(`Агент поддержки: ${value}`);
+    } else {
+    alert("Укажите количество")
+  }  
+});
+
 let btn2 = document.getElementById("btn2"); //объявляем переменную по ID 
 
 btn2.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
@@ -238,12 +249,6 @@ btn7.addEventListener('click', function(){ //вешаем событие на н
    if (tg.MainButton.hide){ //если кнопка скрыта 
     tg.MainButton.show() //показываем кнопку 
    }
-});
-
-let inputValue = document.getElementById("inp1").value;
-
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
-      tg.sendData('Агент поддержки: '+ (input.value = input.value + symbol));
 });
 
 </script>
