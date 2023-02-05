@@ -97,7 +97,7 @@
                         </div>
                         <div class="buttons_card">
                             <button class="minus">-</button>
-                            <input class="quantity" type="text" value="0" min="0">
+                            <input class="quantity" type="text" value="0" min="0" id="inp3">
                             <button class="plus" id="btn3">+</button>
                         </div>
                     </div>
@@ -114,7 +114,7 @@
                         </div>
                         <div class="buttons_card">
                             <button class="minus">-</button>
-                            <input class="quantity" type="text" value="0" min="0">
+                            <input class="quantity" type="text" value="0" min="0" id="inp4">
                             <button class="plus" id="btn4">+</button>
                         </div>
                     </div>
@@ -131,24 +131,24 @@
                         </div>
                         <div class="buttons_card">
                             <button class="minus">-</button>
-                            <input class="quantity" type="text" value="0" min="0">
+                            <input class="quantity" type="text" value="0" min="0" id="inp5">
                             <button class="plus" id="btn5">+</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="main">                                    <!--карточка "WhatsApp Business"-->
+                <div class="main">                                    <!--карточка "WhatsApp Business API"-->
                     <div class="card">
                         <div>
                             <img class="image" src="../bot_cs/image/WA.svg" alt="WABA">
                         </div>
                         <div class="opisanie">
-                            <span>WhatsApp Business</span>
-                            <span>Официальная интеграция с WhatsApp Business.</span>
+                            <span>WhatsApp Business API</span>
+                            <span>Официальная интеграция с WhatsApp Business API.</span>
                         </div>
                         <div class="buttons_card">
                             <button class="minus">-</button>
-                            <input class="quantity" type="text" value="0" min="0">
+                            <input class="quantity" type="text" value="0" min="0" id="inp6">
                             <button class="plus" id="btn6">+</button>
                         </div>
                     </div>
@@ -165,7 +165,7 @@
                         </div>
                         <div class="buttons_card">
                             <button class="minus">-</button>
-                            <input class="quantity" type="text" value="0" min="0">
+                            <input class="quantity" type="text" value="0" min="0" id="inp7">
                             <button class="plus" id="btn7">+</button>
                         </div>
                     </div>
@@ -216,7 +216,7 @@ const input2 = document.getElementById("inp2")
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
     const value = input2.value.trim()
     if (value) {
-      tg.sendData(`Агент поддержки: ${value}`);
+      tg.sendData(`Внутренний сотрудник: ${value}`);
     } else {
     alert("Укажите количество")
   }  
@@ -230,12 +230,34 @@ btn3.addEventListener('click', function(){ //вешаем событие на н
    }
 });
 
+const input3 = document.getElementById("inp3")
+
+Telegram.WebApp.onEvent('mainButtonClicked', function(){
+    const value = input3.value.trim()
+    if (value) {
+      tg.sendData(`Telegram personal: ${value}`);
+    } else {
+    alert("Укажите количество")
+  }  
+});
+
 let btn4 = document.getElementById("btn4"); //объявляем переменную по ID 
 
 btn4.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
    if (tg.MainButton.hide){ //если кнопка скрыта 
     tg.MainButton.show() //показываем кнопку 
    }
+});
+
+const input4 = document.getElementById("inp4")
+
+Telegram.WebApp.onEvent('mainButtonClicked', function(){
+    const value = input4.value.trim()
+    if (value) {
+      tg.sendData(`ВК Личная страница: ${value}`);
+    } else {
+    alert("Укажите количество")
+  }  
 });
 
 let btn5 = document.getElementById("btn5"); //объявляем переменную по ID 
@@ -246,6 +268,17 @@ btn5.addEventListener('click', function(){ //вешаем событие на н
    }
 });
 
+const input5 = document.getElementById("inp5")
+
+Telegram.WebApp.onEvent('mainButtonClicked', function(){
+    const value = input5.value.trim()
+    if (value) {
+      tg.sendData(`WhatsApp: ${value}`);
+    } else {
+    alert("Укажите количество")
+  }  
+});
+
 let btn6 = document.getElementById("btn6"); //объявляем переменную по ID 
 
 btn6.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
@@ -254,12 +287,34 @@ btn6.addEventListener('click', function(){ //вешаем событие на н
    }
 });
 
+const input6 = document.getElementById("inp6")
+
+Telegram.WebApp.onEvent('mainButtonClicked', function(){
+    const value = input6.value.trim()
+    if (value) {
+      tg.sendData(`WhatsApp Business API: ${value}`);
+    } else {
+    alert("Укажите количество")
+  }  
+});
+
 let btn7 = document.getElementById("btn7"); //объявляем переменную по ID 
 
 btn7.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
    if (tg.MainButton.hide){ //если кнопка скрыта 
     tg.MainButton.show() //показываем кнопку 
    }
+});
+
+const input7 = document.getElementById("inp7")
+
+Telegram.WebApp.onEvent('mainButtonClicked', function(){
+    const value = input7.value.trim()
+    if (value) {
+      tg.sendData(`Viber: ${value}`);
+    } else {
+    alert("Укажите количество")
+  }  
 });
 
 </script>
