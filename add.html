@@ -213,10 +213,8 @@ const input2 = document.getElementById("inp2")
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
     const value = input2.value.trim()
-    if (value) {
+    if (value > 0) {
       tg.sendData(`Внутренний сотрудник: ${value}`);
-    } else {
-    alert("Укажите количество")
   }  
 });
 
@@ -232,10 +230,8 @@ const input3 = document.getElementById("inp3")
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
     const value = input3.value.trim()
-    if (value) {
+    if (value > 0) {
       tg.sendData(`Telegram personal: ${value}`);
-    } else {
-    alert("Укажите количество")
   }  
 });
 
@@ -251,10 +247,8 @@ const input4 = document.getElementById("inp4")
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
     const value = input4.value.trim()
-    if (value) {
+    if (value > 0) {
       tg.sendData(`ВК Личная страница: ${value}`);
-    } else {
-    alert("Укажите количество")
   }  
 });
 
@@ -270,10 +264,8 @@ const input5 = document.getElementById("inp5")
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
     const value = input5.value.trim()
-    if (value) {
+    if (value > 0) {
       tg.sendData(`WhatsApp: ${value}`);
-    } else {
-    alert("Укажите количество")
   }  
 });
 
@@ -289,10 +281,8 @@ const input6 = document.getElementById("inp6")
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
     const value = input6.value.trim()
-    if (value) {
+    if (value > 0) {
       tg.sendData(`WhatsApp Business API: ${value}`);
-    } else {
-    alert("Укажите количество")
   }  
 });
 
@@ -308,10 +298,8 @@ const input7 = document.getElementById("inp7")
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
     const value = input7.value.trim()
-    if (value) {
+    if (value > 0) {
       tg.sendData(`Viber: ${value}`);
-    } else {
-    alert("Укажите количество")
   }  
 });
 
