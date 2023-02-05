@@ -196,7 +196,7 @@ const input1 = document.getElementById("inp1")
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
     const value = input1.value.trim()
-    if (value) {
+    if (value > 0) {
       tg.sendData(`Агент поддержки: ${value}`);
     } else {
     alert("Укажите количество")
