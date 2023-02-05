@@ -59,7 +59,7 @@
                         <h1>Агент поддержки</h1>
                         <div class="buttons">
                             <button class="minus">-</button>
-                            <input class="quantity" type="text" min="0" id="inp1">
+                            <input class="quantity" type="text" value="0" min="0" id="inp1">
                             <button class="plus" id="btn1">+</button>
                         </div>
                     </div>
@@ -243,7 +243,7 @@ btn7.addEventListener('click', function(){ //вешаем событие на н
 let inputValue = document.getElementById("inp1").value;
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
-      tg.sendData('Агент поддержки: '+ inputValue);
+      tg.sendData('Агент поддержки: '+ (input.value = input.value + symbol));
 });
 
 </script>
