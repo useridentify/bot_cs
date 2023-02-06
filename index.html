@@ -60,7 +60,7 @@
                         <div class="buttons">
                             <button class="minus">-</button>
                             <input class="quantity" type="text" value="0" min="0" id="in1">
-                            <button class="plus" id="bn1">+</button>
+                            <button class="plus">+</button>
                         </div>
                     </div>
                     <div><p class="description">Агент поддержки общается с клиентами компании.
@@ -75,7 +75,7 @@
                         <div class="buttons">
                             <button class="minus">-</button>
                             <input class="quantity" type="text" value="0" min="0" id="in2">
-                            <button class="plus" id="bn2">+</button>
+                            <button class="plus">+</button>
                         </div>
                     </div>
                     <div><p class="description">Внутренний сотрудник оставляет комментарии для
@@ -193,14 +193,13 @@ btns.forEach(function(btn) {
   })
 })
 
-const inpt1 = document.getElementById("in1")
-const inpt2 = document.getElementById("in2")
+const input1 = document.getElementById("in1")
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    const value1 = inpt1.value.trim()
-    if (value1 > 0) {
-      tg.sendData(`Продлить агента поддержки: ${value}`);
-  }
+    const value = input1.value.trim()
+    if (value > 0) {
+      tg.sendData(`Добавить агента поддержки: ${value}`);
+  }  
 });
 </script>
 </body>
