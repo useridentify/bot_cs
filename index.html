@@ -137,14 +137,14 @@
                     </div>
                 </div>
 
-                <div class="main">                                    <!--карточка "WhatsApp Business"-->
+                <div class="main">                                    <!--карточка "WhatsApp Business API"-->
                     <div class="card">
                         <div>
                             <img class="image" src="../bot_cs/image/WA.svg" alt="WABA">
                         </div>
                         <div class="opisanie">
-                            <span>WhatsApp Business</span>
-                            <span>Официальная интеграция с WhatsApp Business.</span>
+                            <span>WhatsApp Business API</span>
+                            <span>Официальная интеграция с WhatsApp Business API.</span>
                         </div>
                         <div class="buttons_card">
                             <button class="minus">-</button>
@@ -215,6 +215,21 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
   }
     else if (value2 > 0 & value1 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
       tg.sendData(`Продлить внутреннего сотрудника: ${value2}`);
+  }
+  else if (value3 > 0 & value1 == 0 & value2 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
+      tg.sendData(`Продлить Telegram personal: ${value2}`);
+  }
+  else if (value4 > 0 & value1 == 0 & value3 == 0 & value2 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
+      tg.sendData(`Продлить ВК Личная страница: ${value2}`);
+  }
+  else if (value5 > 0 & value1 == 0 & value3 == 0 & value4 == 0 & value2 == 0 & value6 == 0 & value7 == 0) {
+      tg.sendData(`Продлить WhatsApp: ${value2}`);
+  }
+  else if (value6 > 0 & value1 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value2 == 0 & value7 == 0) {
+      tg.sendData(`Продлить WhatsApp Business API: ${value2}`);
+  }
+  else if (value7 > 0 & value1 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value2 == 0) {
+      tg.sendData(`Продлить Viber: ${value2}`);
   }
   else if (value1 > 0 & value2 > 0) {
       tg.sendData(`Продлить агента поддержки: ${value1}\nПродлить внутреннего сотрудника: ${value2}`);
