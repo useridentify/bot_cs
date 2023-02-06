@@ -59,8 +59,8 @@
                         <h1>Агент поддержки</h1>
                         <div class="buttons">
                             <button class="minus">-</button>
-                            <input class="quantity" type="text" value="0" min="0">
-                            <button class="plus">+</button>
+                            <input class="quantity" type="text" value="0" min="0" id="in1">
+                            <button class="plus" id="bn1">+</button>
                         </div>
                     </div>
                     <div><p class="description">Агент поддержки общается с клиентами компании.
@@ -74,8 +74,8 @@
                         <h1>Внутренний сотрудник</h1>
                         <div class="buttons">
                             <button class="minus">-</button>
-                            <input class="quantity" type="text" value="0" min="0">
-                            <button class="plus">+</button>
+                            <input class="quantity" type="text" value="0" min="0" id="in2">
+                            <button class="plus" id="bn2">+</button>
                         </div>
                     </div>
                     <div><p class="description">Внутренний сотрудник оставляет комментарии для
@@ -174,7 +174,29 @@
                 <a class="continue" href="period.html">Продолжить</a>
                 
             </section>
-        </header>
-    </div>
+<script>
+let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
+
+tg.expand(); //расширяем на все окно  
+
+let btns = document.querySelectorAll('button') //объявляем переменную по бутон
+
+// Проходим по массиву
+btns.forEach(function(btn) {
+  // Вешаем событие клик
+  btn.addEventListener('click', function(e) {
+    tg.MainButton.show() //показываем по клику
+  })
+})
+
+const inpt1 = document.getElementById("in1")
+
+Telegram.WebApp.onEvent('mainButtonClicked', function(){
+    const value = input1.value.trim()
+    if (value > 0) {
+      tg.sendData(`Добавить агента поддержки: ${value}`);
+  }  
+});
+</script>
 </body>
 </html>
