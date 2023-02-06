@@ -194,12 +194,17 @@ btns.forEach(function(btn) {
 })
 
 const input1 = document.getElementById("in1")
+const input2 = document.getElementById("in2")
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
     const value = input1.value.trim()
+    const value1 = input2.value.trim()
     if (value > 0) {
-      tg.sendData(`Добавить агента поддержки: ${value}`);
-  }  
+      tg.sendData(`Продлить агента поддержки: ${value}`);
+  }
+    else if (value1 > 0) {
+      tg.sendData(`Продлить внутреннего сотрудника: ${value}`);
+  }    
 });
 </script>
 </body>
