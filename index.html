@@ -202,7 +202,7 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
     if (value > 0) {
       tg.sendData(`Продлить агента поддержки: ${value}`);
   }
-    else if (value1 > 0) {
+    if (value1 > 0) {
       tg.sendData(`Продлить внутреннего сотрудника: ${value1}`);
   }    
 });
