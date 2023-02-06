@@ -60,7 +60,7 @@
                         <div class="buttons">
                             <button class="minus">-</button>
                             <input class="quantity" type="text" value="0" min="0" id="inp1">
-                            <button class="plus" id="btn1">+</button>
+                            <button class="plus">+</button>
                         </div>
                     </div>
                     <div><p class="description">Агент поддержки общается с клиентами компании.
@@ -75,7 +75,7 @@
                         <div class="buttons">
                             <button class="minus">-</button>
                             <input class="quantity" type="text" value="0" min="0" id="inp2">
-                            <button class="plus" id="btn2">+</button>
+                            <button class="plus">+</button>
                         </div>
                     </div>
                     <div><p class="description">Внутренний сотрудник оставляет комментарии для
@@ -98,7 +98,7 @@
                         <div class="buttons_card">
                             <button class="minus">-</button>
                             <input class="quantity" type="text" value="0" min="0" id="inp3">
-                            <button class="plus" id="btn3">+</button>
+                            <button class="plus">+</button>
                         </div>
                     </div>
                 </div>
@@ -115,7 +115,7 @@
                         <div class="buttons_card">
                             <button class="minus">-</button>
                             <input class="quantity" type="text" value="0" min="0" id="inp4">
-                            <button class="plus" id="btn4">+</button>
+                            <button class="plus">+</button>
                         </div>
                     </div>
                 </div>
@@ -132,7 +132,7 @@
                         <div class="buttons_card">
                             <button class="minus">-</button>
                             <input class="quantity" type="text" value="0" min="0" id="inp5">
-                            <button class="plus" id="btn5">+</button>
+                            <button class="plus">+</button>
                         </div>
                     </div>
                 </div>
@@ -149,7 +149,7 @@
                         <div class="buttons_card">
                             <button class="minus">-</button>
                             <input class="quantity" type="text" value="0" min="0" id="inp6">
-                            <button class="plus" id="btn6">+</button>
+                            <button class="plus">+</button>
                         </div>
                     </div>
                 </div>
@@ -166,7 +166,7 @@
                         <div class="buttons_card">
                             <button class="minus">-</button>
                             <input class="quantity" type="text" value="0" min="0" id="inp7">
-                            <button class="plus" id="btn7">+</button>
+                            <button class="plus">+</button>
                         </div>
                     </div>
                 </div>                
@@ -178,131 +178,223 @@
 <script>
 let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
 
-tg.expand(); //расширяем на все окно  
+tg.expand(); //расширяем на все окно
 
 tg.MainButton.text = "Оформить"; //изменяем текст кнопки 
 tg.MainButton.textColor = "#FFFFFF"; //изменяем цвет текста кнопки
 tg.MainButton.color = "#29CE00"; //изменяем цвет бэкграунда кнопки
 
-let btn1 = document.getElementById("btn1"); //объявляем переменную по ID 
+let btns = document.querySelectorAll('button') //объявляем переменную по бутон
 
-btn1.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
-   if (tg.MainButton.hide){ //если кнопка скрыта 
-    tg.MainButton.show() //показываем кнопку 
-   }
-});
+// Проходим по массиву
+btns.forEach(function(btn) {
+  // Вешаем событие клик
+  btn.addEventListener('click', function(e) {
+    tg.MainButton.show() //показываем по клику
+  })
+})
 
 const input1 = document.getElementById("inp1")
-
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    const value = input1.value.trim()
-    if (value > 0) {
-      tg.sendData(`Добавить агента поддержки: ${value}`);
-  }  
-});
-
-let btn2 = document.getElementById("btn2"); //объявляем переменную по ID 
-
-btn2.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
-   if (tg.MainButton.hide){ //если кнопка скрыта 
-    tg.MainButton.show() //показываем кнопку 
-   }
-});
-
 const input2 = document.getElementById("inp2")
-
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    const value = input2.value.trim()
-    if (value > 0) {
-      tg.sendData(`Добавить внутреннего сотрудника: ${value}`);
-  }  
-});
-
-let btn3 = document.getElementById("btn3"); //объявляем переменную по ID 
-
-btn3.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
-   if (tg.MainButton.hide){ //если кнопка скрыта 
-    tg.MainButton.show() //показываем кнопку 
-   }
-});
-
 const input3 = document.getElementById("inp3")
-
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    const value = input3.value.trim()
-    if (value > 0) {
-      tg.sendData(`Добавить Telegram personal: ${value}`);
-  }  
-});
-
-let btn4 = document.getElementById("btn4"); //объявляем переменную по ID 
-
-btn4.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
-   if (tg.MainButton.hide){ //если кнопка скрыта 
-    tg.MainButton.show() //показываем кнопку 
-   }
-});
-
 const input4 = document.getElementById("inp4")
-
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    const value = input4.value.trim()
-    if (value > 0) {
-      tg.sendData(`Добавить ВК Личная страница: ${value}`);
-  }  
-});
-
-let btn5 = document.getElementById("btn5"); //объявляем переменную по ID 
-
-btn5.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
-   if (tg.MainButton.hide){ //если кнопка скрыта 
-    tg.MainButton.show() //показываем кнопку 
-   }
-});
-
 const input5 = document.getElementById("inp5")
-
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    const value = input5.value.trim()
-    if (value > 0) {
-      tg.sendData(`Добавить WhatsApp: ${value}`);
-  }  
-});
-
-let btn6 = document.getElementById("btn6"); //объявляем переменную по ID 
-
-btn6.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
-   if (tg.MainButton.hide){ //если кнопка скрыта 
-    tg.MainButton.show() //показываем кнопку 
-   }
-});
-
 const input6 = document.getElementById("inp6")
-
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    const value = input6.value.trim()
-    if (value > 0) {
-      tg.sendData(`Добавить WhatsApp Business API: ${value}`);
-  }  
-});
-
-let btn7 = document.getElementById("btn7"); //объявляем переменную по ID 
-
-btn7.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
-   if (tg.MainButton.hide){ //если кнопка скрыта 
-    tg.MainButton.show() //показываем кнопку 
-   }
-});
-
 const input7 = document.getElementById("inp7")
 
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    const value = input7.value.trim()
-    if (value > 0) {
-      tg.sendData(`Добавить Viber: ${value}`);
-  }  
-});
 
+Telegram.WebApp.onEvent('mainButtonClicked', function(){
+    const value1 = input1.value.trim()
+    const value2 = input2.value.trim()
+    const value3 = input3.value.trim()
+    const value4 = input4.value.trim()
+    const value5 = input5.value.trim()
+    const value6 = input6.value.trim()
+    const value7 = input7.value.trim()
+    if (value1 > 0 & value2 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
+      tg.sendData(`Добавить агента поддержки: ${value1}`);
+  }
+    else if (value2 > 0 & value1 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
+      tg.sendData(`Добавить внутреннего сотрудника: ${value2}`);
+  }
+  else if (value3 > 0 & value1 == 0 & value2 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
+      tg.sendData(`Добавить Telegram personal: ${value3}`);
+  }
+  else if (value4 > 0 & value1 == 0 & value3 == 0 & value2 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
+      tg.sendData(`Добавить ВК Личная страница: ${value4}`);
+  }
+  else if (value5 > 0 & value1 == 0 & value3 == 0 & value4 == 0 & value2 == 0 & value6 == 0 & value7 == 0) {
+      tg.sendData(`Добавить WhatsApp: ${value5}`);
+  }
+  else if (value6 > 0 & value1 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value2 == 0 & value7 == 0) {
+      tg.sendData(`Добавить WhatsApp Business API: ${value6}`);
+  }
+  else if (value7 > 0 & value1 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value2 == 0) {
+      tg.sendData(`Добавить Viber: ${value7}`);
+  }
+  else if (value1 > 0 & value2 > 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
+      tg.sendData(`Добавить агента поддержки: ${value1}\nДобавить внутреннего сотрудника: ${value2}`);
+  }
+  else if (value1 > 0 & value3 > 0 & value2 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
+      tg.sendData(`Добавить агента поддержки: ${value1}\nДобавить Telegram personal: ${value3}`);
+  }
+  else if (value1 > 0 & value4 > 0 & value3 == 0 & value2 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
+      tg.sendData(`Добавить агента поддержки: ${value1}\nДобавить ВК Личная страница: ${value4}`);
+  }
+  else if (value1 > 0 & value5 > 0 & value3 == 0 & value4 == 0 & value2 == 0 & value6 == 0 & value7 == 0) {
+      tg.sendData(`Добавить агента поддержки: ${value1}\nДобавить WhatsApp: ${value5}`);
+  }
+  else if (value1 > 0 & value6 > 0 & value3 == 0 & value4 == 0 & value5 == 0 & value2 == 0 & value7 == 0) {
+      tg.sendData(`Добавить агента поддержки: ${value1}\nДобавить WhatsApp Business API: ${value6}`);
+  }
+  else if (value1 > 0 & value7 > 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value2 == 0) {
+      tg.sendData(`Добавить агента поддержки: ${value1}\nДобавить Viber: ${value7}`);
+  }
+  else if (value3 > 0 & value2 > 0 & value1 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
+      tg.sendData(`Добавить внутреннего сотрудника: ${value2}\nДобавить Telegram personal: ${value3}`);
+  }
+  else if (value4 > 0 & value2 > 0 & value3 == 0 & value1 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
+      tg.sendData(`Добавить внутреннего сотрудника: ${value2}\nДобавить ВК Личная страница: ${value4}`);
+  }
+  else if (value5 > 0 & value2 > 0 & value3 == 0 & value4 == 0 & value1 == 0 & value6 == 0 & value7 == 0) {
+      tg.sendData(`Добавить внутреннего сотрудника: ${value2}\nДобавить WhatsApp: ${value5}`);
+  }
+  else if (value6 > 0 & value2 > 0 & value3 == 0 & value4 == 0 & value5 == 0 & value1 == 0 & value7 == 0) {
+      tg.sendData(`Добавить внутреннего сотрудника: ${value2}\nДобавить WhatsApp Business API: ${value6}`);
+  }
+  else if (value7 > 0 & value2 > 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value1 == 0) {
+      tg.sendData(`Добавить внутреннего сотрудника: ${value2}\nДобавить Viber: ${value7}`);
+  }
+  else if (value3 > 0 & value4 > 0 & value7 == 0 & value2 == 0 & value5 == 0 & value6 == 0 & value1 == 0) {
+      tg.sendData(`Добавить Telegram personal: ${value3}\nДобавить ВК Личная страница: ${value4}`);
+  }
+  else if (value3 > 0 & value5 > 0 & value2 == 0 & value4 == 0 & value7 == 0 & value6 == 0 & value1 == 0) {
+      tg.sendData(`Добавить Telegram personal: ${value3}\nДобавить WhatsApp: ${value5}`);
+  }
+  else if (value3 > 0 & value6 > 0 & value2 == 0 & value4 == 0 & value5 == 0 & value7 == 0 & value1 == 0) {
+      tg.sendData(`Добавить Telegram personal: ${value3}\nДобавить WhatsApp Business API: ${value6}`);
+  }
+  else if (value3 > 0 & value7 > 0 & value2 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value1 == 0) {
+      tg.sendData(`Добавить Telegram personal: ${value3}\nДобавить Viber: ${value7}`);
+  }
+  else if (value4 > 0 & value5 > 0 & value3 == 0 & value7 == 0 & value2 == 0 & value6 == 0 & value1 == 0) {
+      tg.sendData(`Добавить ВК Личная страница: ${value4}\nДобавить WhatsApp: ${value5}`);
+  }
+  else if (value4 > 0 & value6 > 0 & value3 == 0 & value7 == 0 & value5 == 0 & value2 == 0 & value1 == 0) {
+      tg.sendData(`Добавить ВК Личная страница: ${value4}\nДобавить WhatsApp Business API: ${value6}`);
+  }
+  else if (value7 > 0 & value4 > 0 & value3 == 0 & value2 == 0 & value5 == 0 & value6 == 0 & value1 == 0) {
+      tg.sendData(`Добавить ВК Личная страница: ${value4}\nДобавить Viber: ${value7}`);
+  }
+  else if (value5 > 0 & value6 > 0 & value3 == 0 & value4 == 0 & value7 == 0 & value2 == 0 & value1 == 0) {
+      tg.sendData(`Добавить WhatsApp: ${value5}\nДобавить WhatsApp Business API: ${value6}`);
+  }
+  else if (value5 > 0 & value7 > 0 & value3 == 0 & value4 == 0 & value2 == 0 & value6 == 0 & value1 == 0) {
+      tg.sendData(`Добавить WhatsApp: ${value5}\nДобавить Viber: ${value7}`);
+  }
+  else if (value6 > 0 & value7 > 0 & value3 == 0 & value4 == 0 & value2 == 0 & value5 == 0 & value1 == 0) {
+      tg.sendData(`Добавить WhatsApp Business API: ${value6}\nДобавить Viber: ${value7}`);
+  }
+  else if (value1 > 0 & value2 > 0 & value3 > 0 & value4 == 0 & value7 == 0 & value5 == 0 & value6 == 0) { //3
+    tg.sendData(`Добавить агента поддержки: ${value1}\nДобавить внутреннего сотрудника: ${value2}\nДобавить Telegram personal: ${value3}`);
+  }
+  else if (value1 > 0 & value2 > 0 & value4 > 0 & value3 == 0 & value7 == 0 & value5 == 0 & value6 == 0) {
+    tg.sendData(`Добавить агента поддержки: ${value1}\nДобавить внутреннего сотрудника: ${value2}\nДобавить ВК Личная страница: ${value4}`);
+  }
+  else if (value1 > 0 & value2 > 0 & value5 > 0 & value4 == 0 & value7 == 0 & value3 == 0 & value6 == 0) {
+    tg.sendData(`Добавить агента поддержки: ${value1}\nДобавить внутреннего сотрудника: ${value2}\nДобавить WhatsApp: ${value5}`);
+  }
+  else if (value1 > 0 & value2 > 0 & value6 > 0 & value4 == 0 & value7 == 0 & value5 == 0 & value3 == 0) {
+    tg.sendData(`Добавить агента поддержки: ${value1}\nДобавить внутреннего сотрудника: ${value2}\nДобавить WhatsApp Business API: ${value6}`);
+  }
+  else if (value1 > 0 & value2 > 0 & value7 > 0 & value4 == 0 & value3 == 0 & value5 == 0 & value6 == 0) {
+    tg.sendData(`Добавить агента поддержки: ${value1}\nДобавить внутреннего сотрудника: ${value2}\nДобавить Viber: ${value7}`);
+  }
+  else if (value1 > 0 & value3 > 0 & value4 > 0 & value7 == 0 & value2 == 0 & value5 == 0 & value6 == 0) {
+    tg.sendData(`Добавить агента поддержки: ${value1}\nДобавить Telegram personal: ${value3}\nДобавить ВК Личная страница: ${value4}`);
+  }
+  else if (value1 > 0 & value3 > 0 & value5 > 0 & value7 == 0 & value2 == 0 & value4 == 0 & value6 == 0) {
+    tg.sendData(`Добавить агента поддержки: ${value1}\nДобавить Telegram personal: ${value3}\nДобавить WhatsApp: ${value5}`);
+  }
+  else if (value1 > 0 & value3 > 0 & value6 > 0 & value7 == 0 & value2 == 0 & value5 == 0 & value4 == 0) {
+    tg.sendData(`Добавить агента поддержки: ${value1}\nДобавить Telegram personal: ${value3}\nДобавить WhatsApp Business API: ${value6}`);
+  }
+  else if (value1 > 0 & value3 > 0 & value7 > 0 & value4 == 0 & value2 == 0 & value5 == 0 & value6 == 0) {
+    tg.sendData(`Добавить агента поддержки: ${value1}\nДобавить Telegram personal: ${value3}\nДобавить Viber: ${value7}`);
+  }
+  else if (value1 > 0 & value4 > 0 & value5 > 0 & value3 == 0 & value2 == 0 & value7 == 0 & value6 == 0) {
+    tg.sendData(`Добавить агента поддержки: ${value1}\nДобавить ВК Личная страница: ${value4}\nДобавить WhatsApp: ${value5}`);
+  }
+  else if (value1 > 0 & value4 > 0 & value6 > 0 & value3 == 0 & value2 == 0 & value7 == 0 & value5 == 0) {
+    tg.sendData(`Добавить агента поддержки: ${value1}\nДобавить ВК Личная страница: ${value4}\nДобавить WhatsApp Business API: ${value6}`);
+  }
+  else if (value1 > 0 & value4 > 0 & value7 > 0 & value3 == 0 & value2 == 0 & value5 == 0 & value6 == 0) {
+    tg.sendData(`Добавить агента поддержки: ${value1}\nДобавить ВК Личная страница: ${value4}\nДобавить Viber: ${value7}`);
+  }
+  else if (value3 > 0 & value4 > 0 & value5 > 0 & value1 == 0 & value2 == 0 & value7 == 0 & value6 == 0) {
+    tg.sendData(`Добавить Telegram personal: ${value3}\nДобавить ВК Личная страница: ${value4}\nДобавить WhatsApp: ${value5}`);
+  }
+  else if (value3 > 0 & value4 > 0 & value6 > 0 & value1 == 0 & value2 == 0 & value7 == 0 & value5 == 0) {
+    tg.sendData(`Добавить Telegram personal: ${value3}\nДобавить ВК Личная страница: ${value4}\nДобавить WhatsApp Business API: ${value6}`);
+  }
+  else if (value3 > 0 & value4 > 0 & value7 > 0 & value1 == 0 & value2 == 0 & value5 == 0 & value6 == 0) {
+    tg.sendData(`Добавить Telegram personal: ${value3}\nДобавить ВК Личная страница: ${value4}\nДобавить Viber: ${value7}`);
+  }
+  else if (value2 > 0 & value4 > 0 & value5 > 0 & value1 == 0 & value3 == 0 & value7 == 0 & value6 == 0) {
+    tg.sendData(`Добавить внутреннего сотрудника: ${value2}\nДобавить ВК Личная страница: ${value4}\nДобавить WhatsApp: ${value5}`);
+  }
+  else if (value1 > 0 & value5 > 0 & value6 > 0 & value7 == 0 & value2 == 0 & value3 == 0 & value4 == 0) {
+    tg.sendData(`Добавить агента поддержки: ${value1}\nДобавить WhatsApp: ${value5}\nДобавить WhatsApp Business API: ${value6}`);
+  }
+  else if (value1 > 0 & value5 > 0 & value7 > 0 & value6 == 0 & value2 == 0 & value3 == 0 & value4 == 0) {
+    tg.sendData(`Добавить агента поддержки: ${value1}\nДобавить WhatsApp: ${value5}\nДобавить Viber: ${value7}`);
+  }
+  else if (value1 > 0 & value6 > 0 & value7 > 0 & value5 == 0 & value2 == 0 & value3 == 0 & value4 == 0) {
+    tg.sendData(`Добавить агента поддержки: ${value1}\nДобавить WhatsApp Business API: ${value6}\nДобавить Viber: ${value7}`);
+  }
+  else if (value2 > 0 & value3 > 0 & value4 > 0 & value1 == 0 & value5 == 0 & value7 == 0 & value6 == 0) {
+    tg.sendData(`Добавить внутреннего сотрудника: ${value2}\nДобавить Telegram personal: ${value3}\nДобавить ВК Личная страница: ${value4}`);
+  }
+  else if (value2 > 0 & value3 > 0 & value5 > 0 & value1 == 0 & value4 == 0 & value7 == 0 & value6 == 0) {
+    tg.sendData(`Добавить внутреннего сотрудника: ${value2}\nДобавить Telegram personal: ${value3}\nДобавить WhatsApp: ${value5}`);
+  }
+  else if (value2 > 0 & value3 > 0 & value6 > 0 & value1 == 0 & value4 == 0 & value7 == 0 & value5 == 0) {
+    tg.sendData(`Добавить внутреннего сотрудника: ${value2}\nДобавить Telegram personal: ${value3}\nДобавить WhatsApp Business API: ${value6}`);
+  }
+  else if (value2 > 0 & value3 > 0 & value7 > 0 & value1 == 0 & value4 == 0 & value6 == 0 & value5 == 0) {
+    tg.sendData(`Добавить внутреннего сотрудника: ${value2}\nДобавить Telegram personal: ${value3}\nДобавить Viber: ${value7}`);
+  }
+  else if (value2 > 0 & value5 > 0 & value7 > 0 & value1 == 0 & value4 == 0 & value6 == 0 & value3 == 0) {
+    tg.sendData(`Добавить внутреннего сотрудника: ${value2}\nДобавить WhatsApp: ${value5}\nДобавить Viber: ${value7}`);
+  }
+  else if (value2 > 0 & value5 > 0 & value6 > 0 & value1 == 0 & value4 == 0 & value7 == 0 & value3 == 0) {
+    tg.sendData(`Добавить внутреннего сотрудника: ${value2}\nДобавить WhatsApp: ${value5}\nДобавить WhatsApp Business API: ${value6}`);
+  }
+  else if (value2 > 0 & value7 > 0 & value6 > 0 & value1 == 0 & value4 == 0 & value5 == 0 & value3 == 0) {
+    tg.sendData(`Добавить внутреннего сотрудника: ${value2}\nДобавить Viber: ${value7}\nДобавить WhatsApp Business API: ${value6}`);
+  }
+  else if (value3 > 0 & value5 > 0 & value7 > 0 & value1 == 0 & value4 == 0 & value6 == 0 & value2 == 0) {
+    tg.sendData(`Добавить Telegram personal: ${value3}\nДобавить WhatsApp: ${value5}\nДобавить Viber: ${value7}`);
+  }
+  else if (value3 > 0 & value6 > 0 & value7 > 0 & value1 == 0 & value4 == 0 & value6 == 0 & value2 == 0) {
+    tg.sendData(`Добавить Telegram personal: ${value3}\nДобавить WhatsApp Business API: ${value6}\nДобавить Viber: ${value7}`);
+  }
+  else if (value3 > 0 & value6 > 0 & value5 > 0 & value1 == 0 & value4 == 0 & value7 == 0 & value2 == 0) {
+    tg.sendData(`Добавить Telegram personal: ${value3}\nДобавить WhatsApp Business API: ${value6}\nДобавить WhatsApp: ${value5}`);
+  }
+  else if (value4 > 0 & value6 > 0 & value5 > 0 & value1 == 0 & value3 == 0 & value7 == 0 & value2 == 0) {
+    tg.sendData(`Добавить ВК Личная страница: ${value4}\nДобавить WhatsApp Business API: ${value6}\nДобавить WhatsApp: ${value5}`);
+  }
+  else if (value4 > 0 & value7 > 0 & value5 > 0 & value1 == 0 & value3 == 0 & value6 == 0 & value2 == 0) {
+    tg.sendData(`Добавить ВК Личная страница: ${value4}\nДобавить Viber: ${value7}\nДобавить WhatsApp: ${value5}`);
+  }
+  else if (value4 > 0 & value6 > 0 & value7 > 0 & value1 == 0 & value3 == 0 & value5 == 0 & value2 == 0) {
+    tg.sendData(`Добавить ВК Личная страница: ${value4}\nДобавить WhatsApp Business API: ${value6}\nДобавить Viber: ${value7}`);
+  }
+  else if (value5 > 0 & value6 > 0 & value7 > 0 & value1 == 0 & value3 == 0 & value4 == 0 & value2 == 0) {
+    tg.sendData(`Добавить WhatsApp: ${value5}\nДобавить WhatsApp Business API: ${value6}\nДобавить Viber: ${value7}`);
+  }
+});
 </script>
 
 </html>
