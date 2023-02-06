@@ -97,7 +97,7 @@
                         </div>
                         <div class="buttons_card">
                             <button class="minus">-</button>
-                            <input class="quantity" type="text" value="0" min="0">
+                            <input class="quantity" type="text" value="0" min="0" id="in3">
                             <button class="plus">+</button>
                         </div>
                     </div>
@@ -114,7 +114,7 @@
                         </div>
                         <div class="buttons_card">
                             <button class="minus">-</button>
-                            <input class="quantity" type="text" value="0" min="0">
+                            <input class="quantity" type="text" value="0" min="0" id="in4">
                             <button class="plus">+</button>
                         </div>
                     </div>
@@ -131,7 +131,7 @@
                         </div>
                         <div class="buttons_card">
                             <button class="minus">-</button>
-                            <input class="quantity" type="text" value="0" min="0">
+                            <input class="quantity" type="text" value="0" min="0" id="in5">
                             <button class="plus">+</button>
                         </div>
                     </div>
@@ -148,7 +148,7 @@
                         </div>
                         <div class="buttons_card">
                             <button class="minus">-</button>
-                            <input class="quantity" type="text" value="0" min="0">
+                            <input class="quantity" type="text" value="0" min="0" id="in6">
                             <button class="plus">+</button>
                         </div>
                     </div>
@@ -165,7 +165,7 @@
                         </div>
                         <div class="buttons_card">
                             <button class="minus">-</button>
-                            <input class="quantity" type="text" value="0" min="0">
+                            <input class="quantity" type="text" value="0" min="0" id="in7">
                             <button class="plus">+</button>
                         </div>
                     </div>
@@ -195,18 +195,29 @@ btns.forEach(function(btn) {
 
 const input1 = document.getElementById("in1")
 const input2 = document.getElementById("in2")
+const input3 = document.getElementById("in3")
+const input4 = document.getElementById("in4")
+const input5 = document.getElementById("in5")
+const input6 = document.getElementById("in6")
+const input7 = document.getElementById("in7")
+
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    const value = input1.value.trim()
-    const value1 = input2.value.trim()
-    if (value > 0 & value1 == 0) {
-      tg.sendData(`Продлить агента поддержки: ${value}`);
+    const value1 = input1.value.trim()
+    const value2 = input2.value.trim()
+    const value3 = input3.value.trim()
+    const value4 = input4.value.trim()
+    const value5 = input5.value.trim()
+    const value6 = input6.value.trim()
+    const value7 = input7.value.trim()
+    if (value1 > 0 & value2 == 0) {
+      tg.sendData(`Продлить агента поддержки: ${value1}`);
   }
-    else if (value1 > 0 & value == 0) {
-      tg.sendData(`Продлить внутреннего сотрудника: ${value1}`);
+    else if (value2 > 0 & value1 == 0) {
+      tg.sendData(`Продлить внутреннего сотрудника: ${value2}`);
   }
-  else if (value > 0 & value1 > 0) {
-      tg.sendData(`Продлить агента поддержки: ${value}\nПродлить внутреннего сотрудника: ${value1}`);
+  else if (value1 > 0 & value2 > 0) {
+      tg.sendData(`Продлить агента поддержки: ${value1}\nПродлить внутреннего сотрудника: ${value2}`);
   }  
 });
 </script>
