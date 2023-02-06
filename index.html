@@ -177,7 +177,11 @@
 <script>
 let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
 
-tg.expand(); //расширяем на все окно  
+tg.expand(); //расширяем на все окно
+
+tg.MainButton.text = "Оформить"; //изменяем текст кнопки 
+tg.MainButton.textColor = "#FFFFFF"; //изменяем цвет текста кнопки
+tg.MainButton.color = "#29CE00"; //изменяем цвет бэкграунда кнопки
 
 let btns = document.querySelectorAll('button') //объявляем переменную по бутон
 
@@ -196,10 +200,10 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
     const value1 = inpt1.value.trim()
     const value2 = inpt2.value.trim()
     if (value1 > 0) {
-      tg.sendData(`Добавить агента поддержки: ${value}`);
+      tg.sendData(`Продлить агента поддержки: ${value}`);
   }
   if (value2 > 0) {
-      tg.sendData(`Добавить внутреннего сотрудника: ${value}`);
+      tg.sendData(`Продлить внутреннего сотрудника: ${value}`);
   }
 });
 </script>
