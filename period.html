@@ -24,22 +24,45 @@
         <div class="column">
             <p class="variant">Выберите срок продления:</p>
             <div class="row">
-              <button class="count">6 месяцев</button>
-              <button class="count">9 месяцев</button>
-              <button class="count">12 месяцев</button>
+              <p><input class="count" type="button" value="6 месяцев"></p>
+              <p><input class="count" type="button" value="9 месяцев"></p>
+              <p><input class="count" type="button" value="12 месяцев"></p>
             </div>
             <div class="row">
-            <button class="count">18 месяцев</button>
-              <button class="count">24 месяца</button>
-              <button class="count">36 месяцев</button>
+                <p><input class="count" type="button" value="18 месяцев"></p>
+                <p><input class="count" type="button" value="24 месяца"></p>
+                <p><input class="count" type="button" value="36 месяцев"></p>
             </div>
             <form>
                 <label for="count" class="change_count">Свой вариант:</label>
                 <input type="text" id="count" placeholder="Минимум 6 месяцев">
             </form>
-        </div>
-
-        <script src="/count.js"></script>
-        
+        </div>        
     </div>
+    <script>
+    let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
+
+    tg.expand(); //расширяем на все окно
+
+    tg.MainButton.text = "Оформить"; //изменяем текст кнопки 
+    tg.MainButton.textColor = "#FFFFFF"; //изменяем цвет текста кнопки
+    tg.MainButton.color = "#29CE00"; //изменяем цвет бэкграунда кнопки
+
+    let btns = document.querySelectorAll('button') //объявляем переменную по бутон
+
+    // Проходим по массиву
+    btns.forEach(function(btn) {
+    // Вешаем событие клик
+    btn.addEventListener('click', function(e) {
+        tg.MainButton.show() //показываем по клику
+    })
+    })
+
+    const input = document.querySelectorAll('button')
+
+    Telegram.WebApp.onEvent('mainButtonClicked', function(){
+        const value = input.value.trim()
+        tg.sendData(`Период оплаты: ${value}`);
+    });
+    </script>
 </body>
