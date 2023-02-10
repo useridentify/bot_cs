@@ -632,9 +632,9 @@ window.onclick = function(event) {
 let btns = document.querySelectorAll('count') //объявляем переменную по бутон
 
 // Проходим по массиву
-btns.forEach(function(btn) {
+btns.forEach(function() {
 // Вешаем событие клик
-btn.addEventListener('click', function(e) {
+btns.addEventListener('click', function(e) {
     tg.MainButton.show() //показываем по клику
 })
 })
