@@ -580,16 +580,16 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
             <span class="close">&times;</span>
             <p class="variant">Выберите срок продления:</p>
             <div class="row">
-              <button class="count">6 месяцев</button>
-              <button class="count">9 месяцев</button>
+                <p><input class="count" type="button" value="6 месяцев" id="six"></p>
+                <p><input class="count" type="button" value="9 месяцев" id="nine"></p>
             </div>
             <div class="row">
-                <button class="count">12 месяцев</button>
-                <button class="count">18 месяцев</button>
+                <p><input class="count" type="button" value="12 месяцев"></p>
+                <p><input class="count" type="button" value="18 месяцев"></p>
             </div>
             <div class="row">
-                <button class="count">24 месяца</button>
-                <button class="count">36 месяцев</button>
+                <p><input class="count" type="button" value="24 месяца"></p>
+                <p><input class="count" type="button" value="36 месяцев"></p>
             </div>
             <form>
                 <label for="count" class="change_count">Свой вариант:</label>
@@ -629,14 +629,19 @@ tg.MainButton.text = "Оформить"; //изменяем текст кноп�
 tg.MainButton.textColor = "#FFFFFF"; //изменяем цвет текста кнопки
 tg.MainButton.color = "#29CE00"; //изменяем цвет бэкграунда кнопки
 
-let btns = document.querySelectorAll('button')
+let six = document.getElementById('six');
 
-btns.forEach(function(btn) {
-  // Вешаем событие клик
-  btn.addEventListener('click', function(e) {
-    alert('sd') //показываем по клику
-  })
-})
+btns.addEventListener('click', function() {
+    tg.MainButton.show() //показываем по клику
+  });
+
+Telegram.WebApp.onEvent('mainButtonClicked', function(){
+    const value = six.value.trim()
+    if (value) {
+      tg.sendData(`Период продления: ${value}`);
+  }  
+});
+
 
 </script>
 </body>
