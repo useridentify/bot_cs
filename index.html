@@ -186,6 +186,13 @@ const input5 = document.getElementById("in5")
 const input6 = document.getElementById("in6")
 const input7 = document.getElementById("in7")
 
+let six = document.getElementById('six');
+let nine = document.getElementById('nine');
+let twelve = document.getElementById('twelve');
+let eighteen = document.getElementById('eighteen');
+let tf = document.getElementById('tf');
+let fs = document.getElementById('fs');
+
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
     const value1 = input1.value.trim()
@@ -195,9 +202,17 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
     const value5 = input5.value.trim()
     const value6 = input6.value.trim()
     const value7 = input7.value.trim()
-    const value = six.value.trim()
+    const period1 = six.value.trim()
+    const period2 = nine.value.trim()
+    const period3 = twelve.value.trim()
+    const period4 = eighteen.value.trim()
+    const period5 = tf.value.trim()
+    const period6 = fs.value.trim()
     if (value1 > 0 & value2 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
-      tg.sendData(`Продлить агента поддержки: ${value1}\nПериод продления: ${value}`);
+      tg.sendData(`Продлить агента поддержки: ${value1} + Период продления: ${period1}`);
+  }
+    else if (value1 > 0 & value2 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
+      tg.sendData(`Продлить агента поддержки: ${value1} + Период продления: ${period2}`);
   }
     else if (value2 > 0 & value1 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
       tg.sendData(`Продлить внутреннего сотрудника: ${value2}`);
@@ -630,12 +645,7 @@ tg.MainButton.text = "Оформить"; //изменяем текст кноп�
 tg.MainButton.textColor = "#FFFFFF"; //изменяем цвет текста кнопки
 tg.MainButton.color = "#29CE00"; //изменяем цвет бэкграунда кнопки
 
-let six = document.getElementById('six');
-let nine = document.getElementById('nine');
-let twelve = document.getElementById('twelve');
-let eighteen = document.getElementById('eighteen');
-let tf = document.getElementById('tf');
-let fs = document.getElementById('fs');
+
 
 six.addEventListener('click', function() {
     tg.MainButton.show() //показываем по клику
@@ -645,57 +655,21 @@ nine.addEventListener('click', function() {
     tg.MainButton.show() //показываем по клику
   });
 
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    const value = nine.value.trim()
-    if (value) {
-      tg.sendData(`Период продления: ${value}`);
-  }  
-});
-
 twelve.addEventListener('click', function() {
     tg.MainButton.show() //показываем по клику
   });
-
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    const value = twelve.value.trim()
-    if (value) {
-      tg.sendData(`Период продления: ${value}`);
-  }  
-});
 
 eighteen.addEventListener('click', function() {
     tg.MainButton.show() //показываем по клику
   });
 
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    const value = eighteen.value.trim()
-    if (value) {
-      tg.sendData(`Период продления: ${value}`);
-  }  
-});
-
 tf.addEventListener('click', function() {
     tg.MainButton.show() //показываем по клику
   });
 
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    const value = tf.value.trim()
-    if (value) {
-      tg.sendData(`Период продления: ${value}`);
-  }  
-});
-
 fs.addEventListener('click', function() {
     tg.MainButton.show() //показываем по клику
   });
-
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    const value = fs.value.trim()
-    if (value) {
-      tg.sendData(`Период продления: ${value}`);
-  }  
-});
-
 
 </script>
 </body>
