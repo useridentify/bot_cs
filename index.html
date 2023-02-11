@@ -263,6 +263,17 @@ fs.addEventListener('click', function() {
     tg.MainButton.show() //показываем по клику
   });
 
+let period = 0
+
+document.getElementById("six").onclick = function() {
+    period = '6 месяцев'
+    };
+
+document.getElementById("nine").onclick = function() {
+    period = '9 месяцев'
+    };
+
+
 
 const input1 = document.getElementById("in1")
 const input2 = document.getElementById("in2")
@@ -280,17 +291,11 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
     const value5 = input5.value.trim()
     const value6 = input6.value.trim()
     const value7 = input7.value.trim()
-    const period1 = six.value.trim()
-    const period2 = nine.value.trim()
-    const period3 = twelve.value.trim()
-    const period4 = eighteen.value.trim()
-    const period5 = tf.value.trim()
-    const period6 = fs.value.trim()
     if (value1 > 0 & value2 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
-      tg.sendData(`Продлить агента поддержки: ${value1}\nПериод продления: ${period1}`);
+      tg.sendData(`Продлить агента поддержки: ${value1}\nПериод продления: ${period}`);
   }
     else if (value1 > 0 & value2 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
-      tg.sendData(`Продлить агента поддержки: ${value1}`);
+      tg.sendData(`Продлить агента поддержки: ${value1}\nПериод продления: ${period}`);
   }
     else if (value2 > 0 & value1 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
       tg.sendData(`Продлить внутреннего сотрудника: ${value2}`);
