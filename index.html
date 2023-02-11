@@ -239,9 +239,6 @@ const tf = document.getElementById('tf');
 const fs = document.getElementById('fs');
 
 
-six.addEventListener('click', function() {
-    tg.MainButton.show() //показываем по клику
-  });
 
 nine.addEventListener('click', function() {
     tg.MainButton.show() //показываем по клику
@@ -272,8 +269,11 @@ const input5 = document.getElementById("in5")
 const input6 = document.getElementById("in6")
 const input7 = document.getElementById("in7")
 
+six.addEventListener('click', function() {
+    tg.MainButton.show() //показываем по клику
+  });
 
-Telegram.WebApp.onEvent('mainButtonClicked','six.onclick', function(){
+Telegram.WebApp.onEvent('mainButtonClicked', function(){
     const value1 = input1.value.trim()
     const value2 = input2.value.trim()
     const value3 = input3.value.trim()
