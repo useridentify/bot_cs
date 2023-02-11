@@ -232,12 +232,6 @@ tg.MainButton.text = "Оформить"; //изменяем текст кноп�
 tg.MainButton.textColor = "#FFFFFF"; //изменяем цвет текста кнопки
 tg.MainButton.color = "#29CE00"; //изменяем цвет бэкграунда кнопки
 
-const six = document.getElementById('six');
-const twelve = document.getElementById('twelve');
-const eighteen = document.getElementById('eighteen');
-const tf = document.getElementById('tf');
-const fs = document.getElementById('fs');
-
 
 six.addEventListener('click', function() {
     tg.MainButton.show() //показываем по клику
@@ -273,7 +267,21 @@ document.getElementById("nine").onclick = function() {
     period = '9 месяцев'
     };
 
+document.getElementById("twelve").onclick = function() {
+    period = '12 месяцев'
+    };
 
+document.getElementById("eighteen").onclick = function() {
+    period = '18 месяцев'
+    };
+
+document.getElementById("tf").onclick = function() {
+    period = '24 месяца'
+    };
+
+document.getElementById("fs").onclick = function() {
+    period = '36 месяцев'
+    };
 
 const input1 = document.getElementById("in1")
 const input2 = document.getElementById("in2")
@@ -298,49 +306,49 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
       tg.sendData(`Продлить агента поддержки: ${value1}\nПериод продления: ${period}`);
   }
     else if (value2 > 0 & value1 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
-      tg.sendData(`Продлить внутреннего сотрудника: ${value2}`);
+      tg.sendData(`Продлить внутреннего сотрудника: ${value2}\nПериод продления: ${period}`);
   }
   else if (value3 > 0 & value1 == 0 & value2 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
-      tg.sendData(`Продлить Telegram personal: ${value3}`);
+      tg.sendData(`Продлить Telegram personal: ${value3}\nПериод продления: ${period}`);
   }
   else if (value4 > 0 & value1 == 0 & value3 == 0 & value2 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
-      tg.sendData(`Продлить ВК Личная страница: ${value4}`);
+      tg.sendData(`Продлить ВК Личная страница: ${value4}\nПериод продления: ${period}`);
   }
   else if (value5 > 0 & value1 == 0 & value3 == 0 & value4 == 0 & value2 == 0 & value6 == 0 & value7 == 0) {
-      tg.sendData(`Продлить WhatsApp: ${value5}`);
+      tg.sendData(`Продлить WhatsApp: ${value5}\nПериод продления: ${period}`);
   }
   else if (value6 > 0 & value1 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value2 == 0 & value7 == 0) {
-      tg.sendData(`Продлить WhatsApp Business API: ${value6}`);
+      tg.sendData(`Продлить WhatsApp Business API: ${value6}\nПериод продления: ${period}`);
   }
   else if (value7 > 0 & value1 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value2 == 0) {
-      tg.sendData(`Продлить Viber: ${value7}`);
+      tg.sendData(`Продлить Viber: ${value7}\nПериод продления: ${period}`);
   }
   else if (value1 > 0 & value2 > 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
-      tg.sendData(`Продлить агента поддержки: ${value1}\nПродлить внутреннего сотрудника: ${value2}`);
+      tg.sendData(`Продлить агента поддержки: ${value1}\nПродлить внутреннего сотрудника: ${value2}\nПериод продления: ${period}`);
   }
   else if (value1 > 0 & value3 > 0 & value2 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
-      tg.sendData(`Продлить агента поддержки: ${value1}\nПродлить Telegram personal: ${value3}`);
+      tg.sendData(`Продлить агента поддержки: ${value1}\nПродлить Telegram personal: ${value3}\nПериод продления: ${period}`);
   }
   else if (value1 > 0 & value4 > 0 & value3 == 0 & value2 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
-      tg.sendData(`Продлить агента поддержки: ${value1}\nПродлить ВК Личная страница: ${value4}`);
+      tg.sendData(`Продлить агента поддержки: ${value1}\nПродлить ВК Личная страница: ${value4}\nПериод продления: ${period}`);
   }
   else if (value1 > 0 & value5 > 0 & value3 == 0 & value4 == 0 & value2 == 0 & value6 == 0 & value7 == 0) {
-      tg.sendData(`Продлить агента поддержки: ${value1}\nПродлить WhatsApp: ${value5}`);
+      tg.sendData(`Продлить агента поддержки: ${value1}\nПродлить WhatsApp: ${value5}\nПериод продления: ${period}`);
   }
   else if (value1 > 0 & value6 > 0 & value3 == 0 & value4 == 0 & value5 == 0 & value2 == 0 & value7 == 0) {
-      tg.sendData(`Продлить агента поддержки: ${value1}\nПродлить WhatsApp Business API: ${value6}`);
+      tg.sendData(`Продлить агента поддержки: ${value1}\nПродлить WhatsApp Business API: ${value6}\nПериод продления: ${period}`);
   }
   else if (value1 > 0 & value7 > 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value2 == 0) {
-      tg.sendData(`Продлить агента поддержки: ${value1}\nПродлить Viber: ${value7}`);
+      tg.sendData(`Продлить агента поддержки: ${value1}\nПродлить Viber: ${value7}\nПериод продления: ${period}`);
   }
   else if (value3 > 0 & value2 > 0 & value1 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
-      tg.sendData(`Продлить внутреннего сотрудника: ${value2}\nПродлить Telegram personal: ${value3}`);
+      tg.sendData(`Продлить внутреннего сотрудника: ${value2}\nПродлить Telegram personal: ${value3}\nПериод продления: ${period}`);
   }
   else if (value4 > 0 & value2 > 0 & value3 == 0 & value1 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
-      tg.sendData(`Продлить внутреннего сотрудника: ${value2}\nПродлить ВК Личная страница: ${value4}`);
+      tg.sendData(`Продлить внутреннего сотрудника: ${value2}\nПродлить ВК Личная страница: ${value4}\nПериод продления: ${period}`);
   }
   else if (value5 > 0 & value2 > 0 & value3 == 0 & value4 == 0 & value1 == 0 & value6 == 0 & value7 == 0) {
-      tg.sendData(`Продлить внутреннего сотрудника: ${value2}\nПродлить WhatsApp: ${value5}`);
+      tg.sendData(`Продлить внутреннего сотрудника: ${value2}\nПродлить WhatsApp: ${value5}\nПериод продления: ${period}`);
   }
   else if (value6 > 0 & value2 > 0 & value3 == 0 & value4 == 0 & value5 == 0 & value1 == 0 & value7 == 0) {
       tg.sendData(`Продлить внутреннего сотрудника: ${value2}\nПродлить WhatsApp Business API: ${value6}`);
