@@ -272,7 +272,7 @@ const input5 = document.getElementById("in5")
 const input6 = document.getElementById("in6")
 const input7 = document.getElementById("in7")
 
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
+Telegram.WebApp.onEvent('mainButtonClicked', 'six.clicked', function(){
     const value1 = input1.value.trim()
     const value2 = input2.value.trim()
     const value3 = input3.value.trim()
@@ -286,8 +286,6 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
     const period4 = eighteen.value.trim()
     const period5 = tf.value.trim()
     const period6 = fs.value.trim()
-    if(document.getElementById('six').clicked == true)
-
     if (value1 > 0 & value2 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
       tg.sendData(`Продлить агента поддержки: ${value1}\nПериод продления: ${period1}`);
   }
