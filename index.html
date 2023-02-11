@@ -178,26 +178,15 @@ let tg = window.Telegram.WebApp; //получаем объект webapp теле
 
 tg.expand(); //расширяем на все окно
 
-const input1 = document.getElementById("in1")
-const input2 = document.getElementById("in2")
-const input3 = document.getElementById("in3")
-const input4 = document.getElementById("in4")
-const input5 = document.getElementById("in5")
-const input6 = document.getElementById("in6")
-const input7 = document.getElementById("in7")
-
-let six = document.getElementById('six');
-let nine = document.getElementById('nine');
-let twelve = document.getElementById('twelve');
-let eighteen = document.getElementById('eighteen');
-let tf = document.getElementById('tf');
-let fs = document.getElementById('fs');
+const six = document.getElementById('six');
+const twelve = document.getElementById('twelve');
+const eighteen = document.getElementById('eighteen');
+const tf = document.getElementById('tf');
+const fs = document.getElementById('fs');
 
 tg.MainButton.text = "Оформить"; //изменяем текст кнопки 
 tg.MainButton.textColor = "#FFFFFF"; //изменяем цвет текста кнопки
 tg.MainButton.color = "#29CE00"; //изменяем цвет бэкграунда кнопки
-
-
 
 six.addEventListener('click', function() {
     tg.MainButton.show() //показываем по клику
@@ -223,6 +212,13 @@ fs.addEventListener('click', function() {
     tg.MainButton.show() //показываем по клику
   });
 
+const input1 = document.getElementById("in1")
+const input2 = document.getElementById("in2")
+const input3 = document.getElementById("in3")
+const input4 = document.getElementById("in4")
+const input5 = document.getElementById("in5")
+const input6 = document.getElementById("in6")
+const input7 = document.getElementById("in7")
 
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
