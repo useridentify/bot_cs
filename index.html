@@ -209,10 +209,10 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
     const period5 = tf.value.trim()
     const period6 = fs.value.trim()
     if (value1 > 0 & value2 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
-      tg.sendData(`Продлить агента поддержки: ${value1} + Период продления: ${period1}`);
+      tg.sendData(`Продлить агента поддержки: ${value1}\nПериод продления: ${period1}`);
   }
     else if (value1 > 0 & value2 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
-      tg.sendData(`Продлить агента поддержки: ${value1} + Период продления: ${period2}`);
+      tg.sendData(`Продлить агента поддержки: ${value1}\nПериод продления: ${period2}`);
   }
     else if (value2 > 0 & value1 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
       tg.sendData(`Продлить внутреннего сотрудника: ${value2}`);
