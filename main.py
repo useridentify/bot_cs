@@ -25,15 +25,11 @@ def webAppKeyboard(): #создание клавиатуры с webapp кноп�
 def start_fun(message):
    bot.send_message( message.chat.id, 'Привет,я бот Юздеска!)\nОткрой приложение по кнопке.', parse_mode="Markdown", reply_markup=webAppKeyboard()) #отправляем сообщение с нужной клавиатурой
 
-@bot.message_handler(content_types="text")
-def new_mes(message):
-   start_fun(message)
-
 @bot.message_handler(content_types="web_app_data") #получаем отправленные данные 
 def answer(webAppMes):
    print(webAppMes) #вся информация о сообщении
    print(webAppMes.web_app_data.data) #конкретно то что мы передали в бота
-   bot.send_message(webAppMes.chat.id, f"Ваш заказ.\n{webAppMes.web_app_data.data}") 
+   bot.send_message(webAppMes.chat.id, f"\n{webAppMes.web_app_data.data}") 
    #отправляем сообщение в ответ на отправку данных из веб-приложения 
 
 if __name__ == '__main__':
