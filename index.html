@@ -193,6 +193,37 @@ let eighteen = document.getElementById('eighteen');
 let tf = document.getElementById('tf');
 let fs = document.getElementById('fs');
 
+tg.MainButton.text = "Оформить"; //изменяем текст кнопки 
+tg.MainButton.textColor = "#FFFFFF"; //изменяем цвет текста кнопки
+tg.MainButton.color = "#29CE00"; //изменяем цвет бэкграунда кнопки
+
+
+
+six.addEventListener('click', function() {
+    tg.MainButton.show() //показываем по клику
+  });
+
+nine.addEventListener('click', function() {
+    tg.MainButton.show() //показываем по клику
+  });
+
+twelve.addEventListener('click', function() {
+    tg.MainButton.show() //показываем по клику
+  });
+
+eighteen.addEventListener('click', function() {
+    tg.MainButton.show() //показываем по клику
+  });
+
+tf.addEventListener('click', function() {
+    tg.MainButton.show() //показываем по клику
+  });
+
+fs.addEventListener('click', function() {
+    tg.MainButton.show() //показываем по клику
+  });
+
+
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
     const value1 = input1.value.trim()
@@ -208,10 +239,10 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
     const period4 = eighteen.value.trim()
     const period5 = tf.value.trim()
     const period6 = fs.value.trim()
-    if (value1 > 0 & value2 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
+    if (value1 > 0 & value2 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0 & period1) {
       tg.sendData(`Продлить агента поддержки: ${value1}\nПериод продления: ${period1}`);
   }
-    else if (value1 > 0 & value2 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
+    else if (value1 > 0 & value2 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0 & period2) {
       tg.sendData(`Продлить агента поддержки: ${value1}\nПериод продления: ${period2}`);
   }
     else if (value2 > 0 & value1 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
@@ -640,36 +671,6 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-
-tg.MainButton.text = "Оформить"; //изменяем текст кнопки 
-tg.MainButton.textColor = "#FFFFFF"; //изменяем цвет текста кнопки
-tg.MainButton.color = "#29CE00"; //изменяем цвет бэкграунда кнопки
-
-
-
-six.addEventListener('click', function() {
-    tg.MainButton.show() //показываем по клику
-  });
-
-nine.addEventListener('click', function() {
-    tg.MainButton.show() //показываем по клику
-  });
-
-twelve.addEventListener('click', function() {
-    tg.MainButton.show() //показываем по клику
-  });
-
-eighteen.addEventListener('click', function() {
-    tg.MainButton.show() //показываем по клику
-  });
-
-tf.addEventListener('click', function() {
-    tg.MainButton.show() //показываем по клику
-  });
-
-fs.addEventListener('click', function() {
-    tg.MainButton.show() //показываем по клику
-  });
 
 </script>
 </body>
