@@ -239,8 +239,13 @@ const tf = document.getElementById('tf');
 const fs = document.getElementById('fs');
 
 
+six.addEventListener('click', function() {
+    tg.MainButton.show() //показываем по клику
+  });
 
-
+nine.addEventListener('click', function() {
+    tg.MainButton.show() //показываем по клику
+  });
 
 twelve.addEventListener('click', function() {
     tg.MainButton.show() //показываем по клику
@@ -267,10 +272,6 @@ const input5 = document.getElementById("in5")
 const input6 = document.getElementById("in6")
 const input7 = document.getElementById("in7")
 
-six.addEventListener('click', function() {
-    tg.MainButton.show() //показываем по клику
-  });
-
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
     const value1 = input1.value.trim()
     const value2 = input2.value.trim()
@@ -280,6 +281,7 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
     const value6 = input6.value.trim()
     const value7 = input7.value.trim()
     const period1 = six.value.trim()
+    const period2 = nine.value.trim()
     const period3 = twelve.value.trim()
     const period4 = eighteen.value.trim()
     const period5 = tf.value.trim()
@@ -667,27 +669,6 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
   }
 });
 
-
-nine.addEventListener('click', function() {
-    tg.MainButton.show() //показываем по клику
-  });
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    const value1 = input1.value.trim()
-    const value2 = input2.value.trim()
-    const value3 = input3.value.trim()
-    const value4 = input4.value.trim()
-    const value5 = input5.value.trim()
-    const value6 = input6.value.trim()
-    const value7 = input7.value.trim()
-    const period2 = nine.value.trim()
-    const period3 = twelve.value.trim()
-    const period4 = eighteen.value.trim()
-    const period5 = tf.value.trim()
-    const period6 = fs.value.trim()
-    if (value1 > 0 & value2 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
-      tg.sendData(`Продлить агента поддержки: ${value1}\nПериод продления: ${period2}`);
-  }
-});
 </script>
 </body>
 </html>
