@@ -178,7 +178,7 @@ let tg = window.Telegram.WebApp; //получаем объект webapp теле
 
 tg.expand(); //расширяем на все окно
 
-const six = document.getElementById('six');
+
 const twelve = document.getElementById('twelve');
 const eighteen = document.getElementById('eighteen');
 const tf = document.getElementById('tf');
@@ -187,6 +187,8 @@ const fs = document.getElementById('fs');
 tg.MainButton.text = "Оформить"; //изменяем текст кнопки 
 tg.MainButton.textColor = "#FFFFFF"; //изменяем цвет текста кнопки
 tg.MainButton.color = "#29CE00"; //изменяем цвет бэкграунда кнопки
+
+const six = document.getElementById('six');
 
 six.addEventListener('click', function() {
     tg.MainButton.show() //показываем по клику
