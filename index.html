@@ -240,9 +240,7 @@ const fs = document.getElementById('fs');
 
 
 
-nine.addEventListener('click', function() {
-    tg.MainButton.show() //показываем по клику
-  });
+
 
 twelve.addEventListener('click', function() {
     tg.MainButton.show() //показываем по клику
@@ -667,6 +665,28 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
   }
   else if (value1 > 0 & value2 > 0 & value3 > 0 & value4 > 0 & value5 > 0 & value6 > 0 & value7 > 0) {  //7
     tg.sendData(`Продлить агента поддержки: ${value1}\nПродлить внутреннего сотрудника: ${value2}\nПродлить Telegram personal: ${value3}\nПродлить ВК Личная страница: ${value4}\nПродлить WhatsApp: ${value5}\nПродлить WhatsApp Business API: ${value6}\nПродлить Viber: ${value7}`);
+  }
+});
+
+
+nine.addEventListener('click', function() {
+    tg.MainButton.show() //показываем по клику
+  });
+Telegram.WebApp.onEvent('mainButtonClicked', function(){
+    const value1 = input1.value.trim()
+    const value2 = input2.value.trim()
+    const value3 = input3.value.trim()
+    const value4 = input4.value.trim()
+    const value5 = input5.value.trim()
+    const value6 = input6.value.trim()
+    const value7 = input7.value.trim()
+    const period2 = nine.value.trim()
+    const period3 = twelve.value.trim()
+    const period4 = eighteen.value.trim()
+    const period5 = tf.value.trim()
+    const period6 = fs.value.trim()
+    if (value1 > 0 & value2 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
+      tg.sendData(`Продлить агента поддержки: ${value1}\nПериод продления: ${period2}`);
   }
 });
 </script>
