@@ -257,6 +257,10 @@ fs.addEventListener('click', function() {
     tg.MainButton.show() //показываем по клику
   });
 
+count.addEventListener('click', function() {
+    tg.MainButton.show() //показываем по клику
+  });
+
 let period = 0
 
 document.getElementById("six").onclick = function() {
@@ -281,6 +285,10 @@ document.getElementById("tf").onclick = function() {
 
 document.getElementById("fs").onclick = function() {
     period = '36 месяцев'
+    };
+
+document.getElementById("count").onclick = function() {
+    period = value
     };
 
 const input1 = document.getElementById("in1")
