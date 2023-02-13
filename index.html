@@ -288,7 +288,9 @@ document.getElementById("fs").onclick = function() {
     };
 
 document.getElementById("count").onclick = function() {
-    period = ('count').value
+    input.setAttribute('value', count)
+    input.value = count
+    period = count;
     };
 
 const input1 = document.getElementById("in1")
