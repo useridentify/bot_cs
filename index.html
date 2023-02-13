@@ -191,7 +191,7 @@
                     </div>
                     <form>
                         <label for="count" class="change_count">Свой вариант:</label>
-                        <input type="text" id="count" placeholder="Минимум 6 месяцев">
+                        <input type="text" id="count" placeholder="Минимум 6 месяцев" oninput="count = this.value;">
                     </form>
                 </div>
                 <script>
@@ -288,7 +288,7 @@ document.getElementById("fs").onclick = function() {
     };
 
 document.getElementById("count").onclick = function() {
-    period = document.getElementById("count").value;
+    period = count
     };
 
 const input1 = document.getElementById("in1")
