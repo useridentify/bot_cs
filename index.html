@@ -262,9 +262,9 @@ fs.addEventListener('click', function() {
     tg.MainButton.show() //показываем по клику
   });
 
-count.addEventListener('onchange', function() {
-    tg.MainButton.show() //показываем по клику
-  });
+  document.getElementById("count").onchange = function() {
+    tg.MainButton.show() //показываем при смене значения
+  };
 
 let period = 0
 
