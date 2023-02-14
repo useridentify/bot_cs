@@ -191,7 +191,12 @@
                     </div>
                     <form>
                         <label for="count" class="change_count">Свой вариант:</label>
-                        <input type="text" id="count" placeholder="Минимум 6 месяцев">
+                        <select name="count">
+                          <option value="7 месяцев" id="7m">7 месяцев</option>
+                          <option value="8 месяцев" id="8m">8 месяцев</option>
+                          <option value="10 месяцев" id="10m">10 месяцев</option>
+                          <option value="11 месяцев" id="11m">11 месяцев</option>
+                        </select>
                     </form>
                 </div>
                 <script>
@@ -285,6 +290,10 @@ document.getElementById("tf").onclick = function() {
 
 document.getElementById("fs").onclick = function() {
     period = '36 месяцев'
+    };
+
+document.getElementById("7m").onclick = function() {
+    period = '7 месяцев'
     };
 
 
