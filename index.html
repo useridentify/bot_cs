@@ -193,6 +193,7 @@
                         <label for="count" class="change_count">Свой вариант:</label>
                         <input type="text" id="count" placeholder="Минимум 6 месяцев">
                     </form>
+                    <button name="ok" onclick="TFun()">Подтвердить</button>
                 </div>
                 <script>
                     // Get the modal
@@ -287,9 +288,11 @@ document.getElementById("fs").onclick = function() {
     period = '36 месяцев'
     };
 
-document.getElementById("count").onclick = function() {
-    let period = document.getElementById(count).value;
-    };
+function TFun(){
+    period = (document.getElementById('ok').value);
+}
+
+
 
 const input1 = document.getElementById("in1")
 const input2 = document.getElementById("in2")
