@@ -191,7 +191,7 @@
                     </div>
                     <form>
                         <label for="count" class="change_count">Свой вариант:</label>
-                        <select name="count">
+                        <select id="count">
                           <option value="7 месяцев" id="sm">7 месяцев</option>
                           <option value="8 месяцев" id="8m">8 месяцев</option>
                           <option value="10 месяцев" id="10m">10 месяцев</option>
@@ -262,7 +262,7 @@ fs.addEventListener('click', function() {
     tg.MainButton.show() //показываем по клику
   });
 
-sm.addEventListener('onmousedown', function() {
+count.addEventListener('onchange', function() {
     tg.MainButton.show() //показываем по клику
   });
 
