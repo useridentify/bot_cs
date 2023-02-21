@@ -256,3 +256,12 @@ h1 {
     text-decoration: none;
     cursor: pointer;
 }
+
+.btn {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+  }
