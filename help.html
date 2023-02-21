@@ -25,9 +25,6 @@
                     <li>
                         <a href="help.html" class="main_button">Помощь</a><!--кнопка "помощь"-->
                     </li>
-                    <li>
-                        <a href="docs.html" class="main_button">Документы</a><!--кнопка "Документы"-->
-                    </li>
                 </ul>
         </header>
     </div> 
@@ -37,6 +34,7 @@
     </div>
         
     <section>
+        <h2>Настройка Юздеска</h2>
         <p>Адрес нашей поддержки - support@usedesk.ru</p>
         <p><a href="https://docs.usedesk.ru">База знаний</a></p>
         <p><a href="https://api.usedocs.ru">Документация API</a></p>
@@ -44,6 +42,16 @@
         <p><a href="https://github.com/usedesk/UseDeskSwift">Документация SDK</a></p>
         <p><a href="https://usedesk.ru/blog">Блог о клиентском сервисе</a></p>
     </section>
-
+    <section>
+        <h2>Документы</h2>
+        <p><a class="continue" id="close_docs" href="#">Запросить закрывающие документы</p>
+        <p><a class="continue" id="act" href="#">Запросить акт сверки</p>
+        <p><a href="https://usedesk.ru/official">Официальные документы</a></p>
+    </section>
+<script>
+    close_docs.addEventListener('click', function() {
+    tg.MainButton.show() //показываем по клику
+  });
+</script>
 </body>
 </html>
