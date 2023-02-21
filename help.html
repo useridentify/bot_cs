@@ -49,9 +49,19 @@
         <p><a href="https://usedesk.ru/official">Официальные документы</a></p>
     </section>
 <script>
+
+let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
+
+tg.expand(); //расширяем на все окно
+
+tg.MainButton.text = "Оформить"; //изменяем текст кнопки 
+tg.MainButton.textColor = "#FFFFFF"; //изменяем цвет текста кнопки
+tg.MainButton.color = "#29CE00"; //изменяем цвет бэкграунда кнопки
+
     close_docs.addEventListener('click', function() {
     tg.MainButton.show() //показываем по клику
   });
+  
 </script>
 </body>
 </html>
