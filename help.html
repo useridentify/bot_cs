@@ -30,24 +30,25 @@
     </div> 
 
     <div class="popap">  <!--подсказка "Помощь"-->
-        <p class="help">На старнице "Помощь" собраны полезные ссылки для работы в Юздеске и адрес нашей технической поддержки.</p>
+        <p class="help">На старнице "Помощь" вы можете заказать документы и найти полезную документацию и статьи для работы в Юздеске.</p>
     </div>
         
     <section>
-        <h2>Настройка Юздеска</h2>
-        <p>Адрес нашей поддержки - support@usedesk.ru</p>
-        <p><a href="https://docs.usedesk.ru">База знаний</a></p>
-        <p><a href="https://api.usedocs.ru">Документация API</a></p>
-        <p><a href="https://sdk.usedocs.ru">База знаний мобильного SDK</a></p>
-        <p><a href="https://github.com/usedesk/UseDeskSwift">Документация SDK</a></p>
-        <p><a href="https://usedesk.ru/blog">Блог о клиентском сервисе</a></p>
-    </section>
-    <section>
-        <h2>Документы</h2>
-        <button id="close_docs" class="btn_help">Запросить закрывающие документы</button>
-        <button id="act" class="btn_help">Запросить акт сверки</button>
+        <h2>Документооборот</h2>
+        <button id="close_docs" class="btn_help help_link">Запросить закрывающие документы</button>
+        <button id="act" class="btn_help help_link">Запросить акт сверки</button>
         <p><a href="https://usedesk.ru/official">Официальные документы</a></p>
     </section>
+    <section>
+        <h2>Настройка Юздеска</h2>
+        <p>Адрес нашей поддержки - support@usedesk.ru</p>
+        <p><a href="https://docs.usedesk.ru" class="help_link">База знаний</a></p>
+        <p><a href="https://api.usedocs.ru" class="help_link">Документация API</a></p>
+        <p><a href="https://sdk.usedocs.ru" class="help_link">База знаний мобильного SDK</a></p>
+        <p><a href="https://github.com/usedesk/UseDeskSwift" class="help_link">Документация SDK</a></p>
+        <p><a href="https://usedesk.ru/blog" class="help_link">Блог о клиентском сервисе</a></p>
+    </section>
+
 <script>
 
 let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
@@ -74,7 +75,7 @@ document.getElementById("close_docs").onclick = function() {
     };
 
 document.getElementById("act").onclick = function() {
-    period_act = 'Напишите, за какой период требуется акт сверки.\nПо готовности документы сюда.'
+    period_act = 'Напишите, за какой период требуется акт сверки.\nПо готовности пришлю документы сюда.'
     };
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
