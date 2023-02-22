@@ -62,7 +62,7 @@ a {
     text-align: center;
     background-color: #0077FF;
     border-radius: 15px;
-    margin: 16px auto;
+    margin: 16px auto 4px;
     padding: 5px 10px;
 }
 
@@ -183,7 +183,7 @@ h1 {
   }
 
 .continue {
-    background-color: #29CE00;
+    background-color: #FF4060;
     color: #fff;
     padding: 15px 30px;
     margin: 0;
