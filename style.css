@@ -116,14 +116,22 @@ h1 {
 }
 
 .minus {
-    height: 18px;
-    width: 18px;
+  height: 24px;
+  width: 24px;
+  border-radius: 7px;
+  background-color: #FF4060;
+  border: none;
+  color: #fff;
 }
 
 .plus {
-    height: 18px;
-    width: 18px;
+    height: 24px;
+    width: 24px;
+    border-radius: 7px;
+    background-color: #FF4060;
+    border: none;
     margin-left: -8px;
+    color: #fff;
 }
 
 .buttons {
@@ -141,7 +149,7 @@ h1 {
 }
 
 .quantity {
-    width: 18px;
+    width: 22px;
     border: none;
 }
 
