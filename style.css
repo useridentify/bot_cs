@@ -98,8 +98,7 @@ h1 {
 }
 
 .description {
-    font-style: 'italic';
-    font-style: normal;
+    font-style: italic;
     font-weight: 400;
     font-size: 14px;
     line-height: 12px;
