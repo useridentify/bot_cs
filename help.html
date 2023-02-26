@@ -71,11 +71,11 @@ let period_docs = 0
 let period_act = 0
 
 document.getElementById("close_docs").onclick = function() {
-    period_docs = 'Вы запросили закрывающие документы.\n<b>Напишите, за какой период требуются закрывающие документы.</b>\nПо готовности пришлю их сюда.'
+    period_docs = 'Вы запросили закрывающие документы.\n<b>Напишите, за какой период требуются закрывающие документы.</b>\n\nПо готовности пришлю их сюда.'
     };
 
 document.getElementById("act").onclick = function() {
-    period_act = 'Напишите, за какой период требуется акт сверки.\nПо готовности пришлю документы сюда.'
+    period_act = 'Вы запросили акт сверки.\nНапишите, за какой период требуется акт сверки.\n\nПо готовности пришлю документы сюда.'
     };
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
