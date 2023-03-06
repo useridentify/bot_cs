@@ -330,7 +330,8 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
       Если возникнут вопросы по оплате, напишите нам на care@usedesk.ru`);
   }
     else if (value1 > 0 & value2 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
-      tg.sendData(`Продлить агента поддержки: ${value1}\n\nПериод продления: ${period}`);
+      tg.sendData(`Продлить агента поддержки: ${value1}\n\nПериод продления: ${period}\n\nПо готовности пришлю счет продления сюда, его нужно будет оплатить до окончания срока действия текущих лицензий.
+      Если возникнут вопросы по оплате, напишите нам на care@usedesk.ru`);
   }
     else if (value2 > 0 & value1 == 0 & value3 == 0 & value4 == 0 & value5 == 0 & value6 == 0 & value7 == 0) {
       tg.sendData(`Продлить внутреннего сотрудника: ${value2}\n\nПериод продления: ${period}`);
