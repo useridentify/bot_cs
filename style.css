@@ -220,8 +220,10 @@ h1 {
   }
 
 .variant {
-    font-size: 14px;
     font-family: 'Inter';
+    color: #000000;
+    font-weight: bold;
+    font-family: 'Inter'
   }
 
 .change_count {
