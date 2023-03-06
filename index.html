@@ -177,7 +177,7 @@
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <form class='ID'>
-                      <label for="ID" class="variant">Укажите ID компании:</label>
+                      <label for="ID" class="lbl_id">Укажите ID компании:</label>
                       <select id="first_value">
                       <option value="1" selected>1</option>
                       <option value="2">2</option>
@@ -329,23 +329,23 @@ let fourth_value_id = 0
 let fifth_value_id = 0
 let sixth_value_id = 0
 
-document.getElementById("first_value").onclick = function() {
+document.getElementById("first_value").onchange = function() {
     first_value_id = first_value.value
     };
 
-document.getElementById("second_value").onclick = function() {
+document.getElementById("second_value").onchange = function() {
     second_value_id = second_value.value
     };
 
-document.getElementById("third_value").onclick = function() {
+document.getElementById("third_value").onchange = function() {
     third_value_id = third_value.value
     };
 
-document.getElementById("fourth_value").onclick = function() {
+document.getElementById("fourth_value").onchange = function() {
     fourth_value_id = fourth_value.value
     };
 
-document.getElementById("fifth_value").onclick = function() {
+document.getElementById("fifth_value").onchange = function() {
     fifth_value_id = fifth_value.value
     };
 

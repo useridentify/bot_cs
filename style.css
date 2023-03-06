@@ -206,6 +206,14 @@ h1 {
     margin-bottom: 15px;
   }
 
+.lbl_id {
+    display: block;
+    margin-bottom: 15px;
+    font-family: 'Inter';
+    color: #000000;
+    font-weight: bold;
+}
+
 .count {
     border-radius: 15px;
     background-color: #FF4060;
@@ -223,7 +231,6 @@ h1 {
     font-family: 'Inter';
     color: #000000;
     font-weight: bold;
-    font-family: 'Inter'
   }
 
 .change_count {
